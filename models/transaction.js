@@ -1,6 +1,6 @@
+// models/transaction.js
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
-const Item = require('./item');
 
 const Transaction = sequelize.define('Transaction', {
   item_id: {
@@ -45,7 +45,5 @@ const Transaction = sequelize.define('Transaction', {
     allowNull: false,
   },
 });
-
-Transaction.belongsTo(Item, { foreignKey: 'item_id' });
 
 module.exports = Transaction;
