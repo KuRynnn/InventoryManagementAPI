@@ -1,13 +1,13 @@
-// models/transaction.js
+// ===== models/transaction.js =====
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
-const Transaction = sequelize.define('Transaction', {
+const Transaction = sequelize.define('transactions', {  
   item_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
-      model: 'Items',
+      model: 'items',  
       key: 'id'
     }
   },
@@ -44,6 +44,9 @@ const Transaction = sequelize.define('Transaction', {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
+}, {
+  tableName: 'transactions',  
+  timestamps: true            
 });
 
 module.exports = Transaction;

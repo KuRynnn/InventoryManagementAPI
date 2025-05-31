@@ -1,8 +1,8 @@
-// models/item.js
+// ===== models/item.js =====
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
-const Item = sequelize.define('Item', {
+const Item = sequelize.define('items', {  
   kode_barang: {
     type: DataTypes.STRING(20),
     allowNull: false,
@@ -24,6 +24,9 @@ const Item = sequelize.define('Item', {
     type: DataTypes.INTEGER,
     defaultValue: 0,
   },
+}, {
+  tableName: 'items', 
+  timestamps: true     
 });
 
 module.exports = Item;
