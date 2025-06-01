@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
     console.log('Converted to numbers - tahun:', yearNum, 'bulan:', monthNum);
 
     const tanggalAwal = new Date(tahun, bulan - 1, 1);
-    const tanggalAkhir = new Date(tahun, bulan, 0);
+  const tanggalAkhir = new Date(tahun, bulan, 0, 23, 59, 59, 999);
     
     console.log('Date range calculated:');
     console.log('  Start date (tanggalAwal):', tanggalAwal.toISOString());
